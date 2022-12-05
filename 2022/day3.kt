@@ -8,11 +8,11 @@ fun readInput(): List<String> {
     return data
 }
 
-fun getPriority(c: Char) {
+fun getPriority(c: Char): Int {
     return if (c.isUpperCase()) {
-                27 + (badge - 'A')
+                27 + (c - 'A')
             } else {
-                1 + (badge - 'a')
+                1 + (c - 'a')
             }
 }
 
@@ -39,7 +39,7 @@ fun p2(input: List<String>): Int {
         val setC = input[i + 2].toSet()
 
         val badge = setA.intersect(setB).intersect(setC).first()
-        ans += getPriority(badge.isUpperCase())
+        ans += getPriority(badge)
     }
     return ans
 }
