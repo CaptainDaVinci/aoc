@@ -34,12 +34,10 @@ fun readInput(): List<Assignment> {
 fun p1(input: List<Assignment>): Int {
     var ans = 0;
     input.forEach {
-        run {
-            if (it.elfA.isCompletelyOverlappingWith(it.elfB) 
-                || it.elfB.isCompletelyOverlappingWith(it.elfA)) {
-                    ++ans
-                }
-        }
+        if (it.elfA.isCompletelyOverlappingWith(it.elfB) 
+            || it.elfB.isCompletelyOverlappingWith(it.elfA)) {
+                ++ans
+            }
     }
     return ans
 }
